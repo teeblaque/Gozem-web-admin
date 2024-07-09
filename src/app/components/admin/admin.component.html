@@ -1,1 +1,36 @@
-<p>admin works!</p>
+<div>
+  <button (click)="createPackage()">Create Package</button>
+  <div *ngIf="packages">
+    <h3>Packages</h3>
+    <div *ngFor="let package of packages">
+      <ul>
+        <li>ID: {{ package.package_id }}</li>
+      </ul>
+      <p>Description: {{ package.description }}</p>
+      <p>From: {{ package.from_name }} ({{ package.from_address }})</p>
+      <p>To: {{ package.to_name }} ({{ package.to_address }})</p>
+      <button (click)="deletePackage(package._id)">Delete</button>
+      <br><br>
+    </div>
+  </div>
+
+
+  <button (click)="createDelivery()">Create Delivery</button>
+
+  <h3>Delivery</h3>
+  <div *ngIf="deliveries && deliveries.length">
+    <ul>
+      <li *ngFor="let delivery of deliveries">
+        ID: {{ delivery.delivery_id }} - Status: {{ delivery.status }}
+        <p>
+          Pickup time: {{ delivery.pickup_time }}
+        </p>
+        <p>
+          Start time: {{ delivery.start_time }}
+        </p>
+        <p>End time: {{ delivery.end_time }}</p>
+        <button (click)="deleteDelivery(delivery._id)">Delete</button><br>
+      </li><br>
+    </ul>
+  </div>
+</div>

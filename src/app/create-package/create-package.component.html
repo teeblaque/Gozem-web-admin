@@ -1,0 +1,52 @@
+<div>
+    <h2>Package Form</h2>
+    <form (ngSubmit)="createPackage()">
+        <div>
+            <label>Description:</label>
+            <input [(ngModel)]="newPackage.description" name="description" required>
+        </div>
+        <div>
+            <label>Weight (g):</label>
+            <input type="number" [(ngModel)]="newPackage.weight" name="weight" required>
+        </div>
+        <div>
+            <label>Width (cm):</label>
+            <input type="number" [(ngModel)]="newPackage.width" name="width" required>
+        </div>
+        <div>
+            <label>Height (cm):</label>
+            <input type="number" [(ngModel)]="newPackage.height" name="height" required>
+        </div>
+        <div>
+            <label>Depth (cm):</label>
+            <input type="number" [(ngModel)]="newPackage.depth" name="depth" required>
+        </div>
+        <div>
+            <label>From Name:</label>
+            <input [(ngModel)]="newPackage.from_name" name="from_name" required>
+        </div>
+        <div>
+            <label>From Address:</label>
+            <input [(ngModel)]="newPackage.from_address" name="from_address" required>
+        </div>
+        <div>
+            <label>From Location (Lat, Lng):</label>
+            <input type="number" [(ngModel)]="newPackage.from_location.lat" name="from_location_lat" required>
+            <input type="number" [(ngModel)]="newPackage.from_location.lng" name="from_location_lng" required>
+        </div>
+        <div>
+            <label>To Name:</label>
+            <input [(ngModel)]="newPackage.to_name" name="to_name" required>
+        </div>
+        <div>
+            <label>To Address:</label>
+            <input [(ngModel)]="newPackage.to_address" name="to_address" required>
+        </div>
+        <div>
+            <label>To Location (Lat, Lng):</label>
+            <input type="number" [(ngModel)]="newPackage.to_location.lat" name="to_location_lat" required>
+            <input type="number" [(ngModel)]="newPackage.to_location.lng" name="to_location_lng" required>
+        </div>
+        <button type="submit">Create Package</button>
+    </form>
+</div>

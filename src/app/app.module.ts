@@ -5,17 +5,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { ApiService } from './services/api.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { SocketService } from './services/socket.service';
+import { CreatePackageComponent } from './create-package/create-package.component';
+import { CreateDeliveryComponent } from './create-delivery/create-delivery.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminComponent
+    AdminComponent,
+    CreatePackageComponent,
+    CreateDeliveryComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    HttpClientModule,
+    AppRoutingModule,
   ],
-  providers: [ApiService],
+  providers: [ApiService, SocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

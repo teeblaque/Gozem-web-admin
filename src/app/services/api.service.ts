@@ -26,8 +26,8 @@ export class ApiService {
     return this.http.put(`${this.baseUrl}/package/${id}`, data);
   }
 
-  deletePackage(id: string, data: any): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/package/${id}`, data);
+  deletePackage(id: string): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/package/${id}`);
   }
 
   getDeliveries(): Observable<any> {
@@ -46,7 +46,7 @@ export class ApiService {
     return this.http.put(`${this.baseUrl}/delivery/${id}`, data);
   }
 
-  deleteDelivery(id: string, data: any): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/delivery/${id}`, data);
+  deleteDelivery(id: string): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/delivery/${id}`);
   }
 }

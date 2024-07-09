@@ -1,0 +1,27 @@
+<div>
+    <h2>Delivery Form</h2>
+    <form (ngSubmit)="createDelivery()">
+        <div>
+            <label>Package ID:</label>
+            <select [(ngModel)]="newDelivery.package_id" name="package_id" required>
+                <option *ngFor="let pkg of packages" [value]="pkg.package_id">{{ pkg.package_id }}</option>
+            </select>
+        </div>
+        <div>
+            <label>Status:</label>
+            <select [(ngModel)]="newDelivery.status" name="status" required>
+                <option value="open">Open</option>
+                <option value="picked-up">Picked Up</option>
+                <option value="in-transit">In Transit</option>
+                <option value="delivered">Delivered</option>
+                <option value="failed">Failed</option>
+            </select>
+        </div>
+        <div>
+            <label>Location (Lat, Lng):</label>
+            <input type="number" [(ngModel)]="newDelivery.location.lat" name="location_lat" required>
+            <input type="number" [(ngModel)]="newDelivery.location.lng" name="location_lng" required>
+        </div>
+        <button type="submit">Create Delivery</button>
+    </form>
+</div>
